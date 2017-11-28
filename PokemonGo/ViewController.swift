@@ -9,11 +9,17 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var  ubicacion = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        ubicacion.delegate = self
+        ubicacion.requestWhenInUseAuthorization()
+        ubicacion.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {
