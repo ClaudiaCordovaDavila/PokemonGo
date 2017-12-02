@@ -23,6 +23,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
             mapView.showsUserLocation = true
             ubicacion.startUpdatingLocation()
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+                if let coord = self.ubicacion.location?.coordinate{
+                    let pin = MKPointAnnotation()
+                    pin.coordinate = coord
+                    self.mapView.addAnnotation(pin)
+                }
+            })
         }else{
             ubicacion.requestWhenInUseAuthorization()
         }
