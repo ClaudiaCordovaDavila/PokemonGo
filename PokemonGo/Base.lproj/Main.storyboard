@@ -20,15 +20,25 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S1i-1j-AqS">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MF-eM-y8N">
+                                <rect key="frame" x="315" y="40" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nB0-zD-Ddw"/>
+                                    <constraint firstAttribute="width" constant="50" id="u0P-1S-677"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="S1i-1j-AqS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AYH-ki-vWK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S1i-1j-AqS" secondAttribute="bottom" id="CCS-zB-4fq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S1i-1j-AqS" secondAttribute="bottom" id="FPV-f7-IKm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7MF-eM-y8N" secondAttribute="trailing" constant="10" id="NMP-bF-sjg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S1i-1j-AqS" secondAttribute="trailing" id="PhM-46-XD0"/>
                             <constraint firstItem="S1i-1j-AqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="T7e-xP-tNY"/>
                             <constraint firstItem="S1i-1j-AqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gEF-2i-cNf"/>
+                            <constraint firstItem="7MF-eM-y8N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yK4-Q8-67d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
