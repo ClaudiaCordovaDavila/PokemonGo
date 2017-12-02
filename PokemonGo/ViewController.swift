@@ -32,17 +32,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if(contActualizaciones < 1){
             let region = MKCoordinateRegionMakeWithDistance(ubicacion.location!.coordinate, 1000, 1000)
             mapView.setRegion(region, animated: true)
-            print("Ubicacion actualizada")
-            print(region)
-            print(contActualizaciones)
         }else{
             ubicacion.stopUpdatingLocation()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func centrarTapped(_ sender: Any) {
+        if let coord = ubicacion.location?.coordinate{
+            let region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000)
+            mapView.setRegion(region, animated: true)
+            contActualizaciones += 1
+        }
     }
 }
 
