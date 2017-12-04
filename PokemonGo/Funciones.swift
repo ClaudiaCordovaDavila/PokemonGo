@@ -6,7 +6,6 @@
 //  Copyright © 2017 Tecsup. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import CoreData
 
@@ -37,7 +36,7 @@ func crearPokemon(xnombre:String, ximagenNombre:String){
 }
 
 func obtenerPokemons() -> [Pokemon]{
-    let  context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     do{
         let pokemons = try context.fetch(Pokemon.fetchRequest()) as! [Pokemon]
         if pokemons.count == 0 {
@@ -57,18 +56,18 @@ func obtenerPokemonsAtrapados() -> [Pokemon]{
         let pokemons = try context.fetch(queryConWhere) as [Pokemon]
         return pokemons
     }catch{}
-    return[]
+    return []
 }
 
 func obtenerPokemonsNoAtrapados() -> [Pokemon]{
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let queryConWhere = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
-    queryConWhere.predicate = NSPredicate(format: "no atrapado == %@", true as CVarArg)
+    queryConWhere.predicate = NSPredicate(format: "atrapado == %@", true as CVarArg)
     do{
         let pokemons = try context.fetch(queryConWhere) as [Pokemon]
         return pokemons
     }catch{}
-    return[]
+    return []
 }
 
 

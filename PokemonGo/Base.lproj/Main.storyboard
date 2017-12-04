@@ -64,6 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="650" y="33"/>
         </scene>
         <!--Pokedex View Controller-->
         <scene sceneID="KhZ-kW-ENH">
