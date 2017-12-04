@@ -84,5 +84,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             contActualizaciones += 1
         }
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        mapView.deselectAnnotation(view.annotation, animated: true)
+        if view.annotation is MKUserLocation{
+            return
+        }
+        print("PIN PRESIONADO!")
+    }
 }
 
