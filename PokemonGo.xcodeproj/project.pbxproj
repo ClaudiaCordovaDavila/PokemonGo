@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E2D65D361FD5E30E001191E6 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D65D351FD5E30E001191E6 /* PokedexViewController.swift */; };
+		E2D65D381FD5E5CD001191E6 /* Funciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D65D371FD5E5CD001191E6 /* Funciones.swift */; };
 		E2D8AE4E1FCCD44A006324B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8AE4D1FCCD44A006324B5 /* AppDelegate.swift */; };
 		E2D8AE501FCCD44A006324B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8AE4F1FCCD44A006324B5 /* ViewController.swift */; };
 		E2D8AE531FCCD44A006324B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D8AE511FCCD44A006324B5 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		E2D65D351FD5E30E001191E6 /* PokedexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
+		E2D65D371FD5E5CD001191E6 /* Funciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funciones.swift; sourceTree = "<group>"; };
 		E2D8AE4A1FCCD44A006324B5 /* PokemonGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D8AE4D1FCCD44A006324B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2D8AE4F1FCCD44A006324B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				E2D8AE591FCCD44A006324B5 /* LaunchScreen.storyboard */,
 				E2D8AE5C1FCCD44A006324B5 /* Info.plist */,
 				E2D8AE541FCCD44A006324B5 /* PokemonGo.xcdatamodeld */,
+				E2D65D371FD5E5CD001191E6 /* Funciones.swift */,
 			);
 			path = PokemonGo;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				E2D65D361FD5E30E001191E6 /* PokedexViewController.swift in Sources */,
 				E2D8AE4E1FCCD44A006324B5 /* AppDelegate.swift in Sources */,
 				E2D8AE561FCCD44A006324B5 /* PokemonGo.xcdatamodeld in Sources */,
+				E2D65D381FD5E5CD001191E6 /* Funciones.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,10 +15,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var  ubicacion = CLLocationManager()
     var contActualizaciones = 0
+    var pokemons:[Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ubicacion.delegate = self
+        pokemons = obtenerPokemons()
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
             mapView.showsUserLocation = true
