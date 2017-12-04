@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2AC47761FD6077E0035D1F2 /* PokePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC47751FD6077E0035D1F2 /* PokePin.swift */; };
 		E2D65D361FD5E30E001191E6 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D65D351FD5E30E001191E6 /* PokedexViewController.swift */; };
 		E2D65D381FD5E5CD001191E6 /* Funciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D65D371FD5E5CD001191E6 /* Funciones.swift */; };
 		E2D8AE4E1FCCD44A006324B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8AE4D1FCCD44A006324B5 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2AC47751FD6077E0035D1F2 /* PokePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokePin.swift; sourceTree = "<group>"; };
 		E2D65D351FD5E30E001191E6 /* PokedexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 		E2D65D371FD5E5CD001191E6 /* Funciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funciones.swift; sourceTree = "<group>"; };
 		E2D8AE4A1FCCD44A006324B5 /* PokemonGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 				E2D8AE5C1FCCD44A006324B5 /* Info.plist */,
 				E2D8AE541FCCD44A006324B5 /* PokemonGo.xcdatamodeld */,
 				E2D65D371FD5E5CD001191E6 /* Funciones.swift */,
+				E2AC47751FD6077E0035D1F2 /* PokePin.swift */,
 			);
 			path = PokemonGo;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AC47761FD6077E0035D1F2 /* PokePin.swift in Sources */,
 				E2D8AE501FCCD44A006324B5 /* ViewController.swift in Sources */,
 				E2D65D361FD5E30E001191E6 /* PokedexViewController.swift in Sources */,
 				E2D8AE4E1FCCD44A006324B5 /* AppDelegate.swift in Sources */,

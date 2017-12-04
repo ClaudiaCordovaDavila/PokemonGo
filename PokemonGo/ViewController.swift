@@ -28,8 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             ubicacion.startUpdatingLocation()
             Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
                 if let coord = self.ubicacion.location?.coordinate{
-                    let pin = MKPointAnnotation()
-                    pin.coordinate = coord
+                    let pin = PokePin(coord:coord)
                     let randomLat = (Double(arc4random_uniform(200))-100.0)/5000.0
                     let randomLon = (Double(arc4random_uniform(200))-100.0)/5000.0
                     pin.coordinate.longitude += randomLon
@@ -52,6 +51,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            let pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            pinView.image = UIImage(named:"mew")
+            
+            var frame = pinView.frame
+            frame.size.height = 50
+            frame.size.width = 50
+            pinView.frame = frame
+            
+            return pinView
+        }
+        
         let pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         pinView.image = UIImage(named:"mew")
         
