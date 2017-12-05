@@ -62,7 +62,7 @@ func obtenerPokemonsAtrapados() -> [Pokemon]{
 func obtenerPokemonsNoAtrapados() -> [Pokemon]{
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let queryConWhere = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
-    queryConWhere.predicate = NSPredicate(format: "atrapado == %@", true as CVarArg)
+    queryConWhere.predicate = NSPredicate(format: "no atrapado == %@", false as CVarArg)
     do{
         let pokemons = try context.fetch(queryConWhere) as [Pokemon]
         return pokemons
