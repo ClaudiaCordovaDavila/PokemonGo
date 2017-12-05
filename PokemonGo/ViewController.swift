@@ -90,7 +90,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if view.annotation is MKUserLocation{
             return
         }
-        print("PIN PRESIONADO!")
+        let region = MKCoordinateRegionMakeWithDistance(view.annotation!.coordinate, 200, 200)
+        mapView.setRegion(region, animated: true)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            if let coord = self.ubicacion.location?.coordinate {
+                let pokemon = (view.annotation as! PokePin).pokemon
+                if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(coord)){
+                    print("Puede atrapar el pokemon")
+                    pokemon.atrapado = true
+                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                    mapView.removeAnnotation(view.annotation!)
+                    
+                    let alertaVC = UIAlertController(title: "Felicidades!", message: "Atrapaste a un \(pokemon.nombre)", preferredStyle: .alert)
+                    let pokedexAction = UIAlertAction(title: "Pokedex", style: .default, handler: {
+                        (action) in
+                        self.performSegue(withIdentifier: "pokedexSegue", sender: nil)
+                    })
+                    alertaVC.addAction(pokedexAction)
+                    let okAccion = UIAlertAction(title: "ok", style: .default, handler:nil)
+                    alertaVC.addAction(okAccion)
+                    
+                    self.present(alertaVC, animated: true, completion: nil)
+                }else{
+                    let alertaVC = UIAlertController(title: "Ups!", message: "Estas muy lejos de ese \(pokemon.nombre!)", preferredStyle: .alert)
+                    let okAccion = UIAlertAction(title: "ok", style: .default, handler:nil)
+                    alertaVC.addAction(okAccion)
+                    self.present(alertaVC, animated: true, completion: nil)
+                }
+            }
+        }
     }
+    
+    
 }
 
