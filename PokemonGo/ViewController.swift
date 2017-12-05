@@ -23,22 +23,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         pokemons = obtenerPokemons()
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
-            mapView.delegate = self
-            mapView.showsUserLocation = true
-            ubicacion.startUpdatingLocation()
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
-                if let coord = self.ubicacion.location?.coordinate{
-                    let pokemon = self.pokemons[Int(arc4random_uniform(UInt32(self.pokemons.count)))]
-                    let pin = PokePin(coord:coord, pokemon:pokemon)
-                    let randomLat = (Double(arc4random_uniform(200))-100.0)/5000.0
-                    let randomLon = (Double(arc4random_uniform(200))-100.0)/5000.0
-                    pin.coordinate.longitude += randomLon
-                    pin.coordinate.latitude += randomLat
-                    self.mapView.addAnnotation(pin)
-                }
-            })
+            setup()
         }else{
             ubicacion.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func setup(){
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        ubicacion.startUpdatingLocation()
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+            if let coord = self.ubicacion.location?.coordinate{
+                let pokemon = self.pokemons[Int(arc4random_uniform(UInt32(self.pokemons.count)))]
+                let pin = PokePin(coord:coord, pokemon:pokemon)
+                let randomLat = (Double(arc4random_uniform(200))-100.0)/5000.0
+                let randomLon = (Double(arc4random_uniform(200))-100.0)/5000.0
+                pin.coordinate.longitude += randomLon
+                pin.coordinate.latitude += randomLat
+                self.mapView.addAnnotation(pin)
+            }
+        })
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse{
+            setup()
         }
     }
     
