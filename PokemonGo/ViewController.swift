@@ -93,7 +93,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let region = MKCoordinateRegionMakeWithDistance(view.annotation!.coordinate, 200, 200)
         mapView.setRegion(region, animated: true)
         
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
             if let coord = self.ubicacion.location?.coordinate {
                 let pokemon = (view.annotation as! PokePin).pokemon
                 if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(coord)){
@@ -119,9 +119,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     self.present(alertaVC, animated: true, completion: nil)
                 }
             }
-        }
+        })
     }
-    
     
 }
 
